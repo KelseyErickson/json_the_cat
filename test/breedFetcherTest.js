@@ -22,11 +22,11 @@ describe('fetchBreedDescription', () => {
       
       assert.equal(err, 'Request not Found');
 
-      const expectedDesc = null;
 
-      assert.equal(expectedDesc, null);
+      assert.equal(desc, null);
 
       done();
+      
     });
   });
 });
