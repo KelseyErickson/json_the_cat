@@ -6,10 +6,10 @@ const fetchBreedDescription = function(breedname, callback) {
 
   request(`https://api.thecatapi.com/v1/breeds/search?q=${breedname}`, (error, response, body) => {
 
-    if (error !== null) {
+    if (error) {
 
       callback(error, null);
-      process.exit();
+      return
 
     }
 
@@ -19,7 +19,7 @@ const fetchBreedDescription = function(breedname, callback) {
     if (data.length === 0) {
 
       callback('Request not Found', null);
-      process.exit();
+      return;
 
     }
 
